@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>YouTube Transkript + Özet — Ayarlar</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; width: 380px; margin: 0; padding: 14px; font-size: 13px; color: #1f1f1f; }
+  h1 { font-size: 15px; margin: 0 0 10px; }
+  label { display: block; font-weight: 600; margin: 10px 0 4px; }
+  textarea, select, input[type=text] { width: 100%; box-sizing: border-box; font: inherit; padding: 6px; border: 1px solid #ccc; border-radius: 6px; }
+  textarea { height: 170px; resize: vertical; font-family: ui-monospace, Menlo, monospace; font-size: 12px; }
+  .row { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+  .row label { margin: 0; font-weight: 500; }
+  .hint { color: #666; font-size: 11.5px; margin-top: 4px; }
+  .actions { display: flex; gap: 8px; margin-top: 14px; }
+  button { font: inherit; padding: 7px 12px; border-radius: 8px; border: 1px solid #ccc; background: #f4f4f4; cursor: pointer; }
+  button.primary { background: #ff0033; color: #fff; border-color: #ff0033; }
+  #saved { color: #188038; font-size: 12px; align-self: center; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1f1f1f; color: #eee; }
+    textarea, select, input[type=text], button { background: #2b2b2b; color: #eee; border-color: #444; }
+    button.primary { background: #ff0033; border-color: #ff0033; }
+    .hint { color: #aaa; }
+  }
+</style>
+</head>
+<body>
+  <h1>📝 YouTube Transkript + Özet</h1>
+
+  <label for="promptTemplate">Özet promptu</label>
+  <textarea id="promptTemplate"></textarea>
+  <div class="hint">Kullanılabilir yer tutucular: <code>{title}</code>, <code>{url}</code>, <code>{transcript}</code></div>
+
+  <label for="preferredLang">Tercih edilen altyazı dili</label>
+  <select id="preferredLang">
+    <option value="tr">Türkçe (tr)</option>
+    <option value="en">İngilizce (en)</option>
+    <option value="de">Almanca (de)</option>
+    <option value="fr">Fransızca (fr)</option>
+    <option value="es">İspanyolca (es)</option>
+    <option value="ru">Rusça (ru)</option>
+    <option value="ar">Arapça (ar)</option>
+    <option value="ja">Japonca (ja)</option>
+  </select>
+  <div class="hint">Bu dilde altyazı yoksa videonun kendi dili kullanılır; panelden de değiştirilebilir.</div>
+
+  <div class="row">
+    <input type="checkbox" id="includeTimestamps">
+    <label for="includeTimestamps">Prompta zaman damgalarını da ekle</label>
+  </div>
+
+  <div class="actions">
+    <button class="primary" id="save">Kaydet</button>
+    <button id="reset">Varsayılana dön</button>
+    <span id="saved"></span>
+  </div>
+
+  <div class="hint" style="margin-top:12px">
+    Nasıl çalışır: "Özetle" prompt'u panoya kopyalar ve ChatGPT/Claude'u yeni sekmede açar. Kısa transkriptlerde
+    prompt otomatik dolar; uzunlarda sekmede <b>Ctrl/Cmd+V</b> yapmanız yeterli. Hiçbir ücretli API kullanılmaz.
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

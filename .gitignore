@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+._*
+
+# Paketlenmiş eklenti / anahtarlar
+*.crx
+*.pem
+*.zip
+
+# Editör ve bağımlılıklar
+node_modules/
+.vscode/
+.idea/

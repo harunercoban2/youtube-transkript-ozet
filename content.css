@@ -1,0 +1,48 @@
+#yto-panel {
+  font-family: "Roboto", "Arial", sans-serif;
+  color: var(--yt-spec-text-primary, #0f0f0f);
+  background: var(--yt-spec-badge-chip-background, rgba(0, 0, 0, 0.05));
+  border-radius: 12px;
+  margin: 0 0 16px 0;
+  padding: 12px;
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 1.4;
+}
+#yto-panel .yto-head { display: flex; align-items: center; gap: 8px; }
+#yto-panel .yto-title { font-weight: 600; font-size: 15px; flex: 1; }
+#yto-panel select {
+  background: var(--yt-spec-brand-background-solid, #fff);
+  color: inherit;
+  border: 1px solid var(--yt-spec-10-percent-layer, rgba(0,0,0,.15));
+  border-radius: 8px; padding: 4px 6px; font-size: 12px; max-width: 160px;
+}
+#yto-panel .yto-icon {
+  background: transparent; border: 0; color: inherit; cursor: pointer; font-size: 16px; padding: 2px 6px;
+}
+#yto-panel .yto-body { margin-top: 10px; }
+#yto-panel.yto-collapsed .yto-body { display: none; }
+#yto-panel .yto-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+#yto-panel .yto-btn {
+  cursor: pointer; border: 0; border-radius: 18px; padding: 7px 12px; font-size: 13px; font-weight: 500;
+  background: var(--yt-spec-badge-chip-background, rgba(0,0,0,.08));
+  color: var(--yt-spec-text-primary, #0f0f0f);
+  outline: 1px solid var(--yt-spec-10-percent-layer, rgba(0,0,0,.1));
+}
+#yto-panel .yto-btn:hover { filter: brightness(0.92); }
+#yto-panel .yto-primary { background: #ff0033; color: #fff; outline: 0; }
+#yto-panel .yto-primary:hover { filter: brightness(0.9); }
+#yto-panel .yto-status {
+  margin-top: 8px; font-size: 12px; color: var(--yt-spec-text-secondary, #606060);
+}
+#yto-panel .yto-status.yto-err { color: #d93025; }
+#yto-panel .yto-transcript {
+  margin-top: 8px; max-height: 320px; overflow-y: auto; padding-right: 4px;
+}
+#yto-panel .yto-transcript:empty { display: none; }
+#yto-panel .yto-row { display: flex; gap: 8px; padding: 3px 0; align-items: flex-start; }
+#yto-panel .yto-ts {
+  flex: 0 0 auto; background: transparent; border: 0; cursor: pointer; padding: 0;
+  color: #3ea6ff; font-variant-numeric: tabular-nums; font-size: 12px; min-width: 42px; text-align: left;
+}
+#yto-panel .yto-ts:hover { text-decoration: underline; }
